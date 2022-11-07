@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tomatoforum-dev-201448-authRole",
+      "UnauthRoleArn": "arn:aws:iam::294953992273:role/amplify-tomatoforum-dev-201448-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::294953992273:role/amplify-tomatoforum-dev-201448-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tomatoforum-dev-201448-deployment",
+      "UnauthRoleName": "amplify-tomatoforum-dev-201448-unauthRole",
+      "StackName": "amplify-tomatoforum-dev-201448",
+      "StackId": "arn:aws:cloudformation:us-east-1:294953992273:stack/amplify-tomatoforum-dev-201448/693a9500-5e8d-11ed-90f8-0ee25b45eaa3",
+      "AmplifyAppId": "d2b6er059tjqgj"
+    }
+  }
+}
