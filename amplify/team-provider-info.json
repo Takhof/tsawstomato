@@ -9,18 +9,30 @@
       "UnauthRoleName": "amplify-tomatoforum-dev-201448-unauthRole",
       "StackName": "amplify-tomatoforum-dev-201448",
       "StackId": "arn:aws:cloudformation:us-east-1:294953992273:stack/amplify-tomatoforum-dev-201448/693a9500-5e8d-11ed-90f8-0ee25b45eaa3",
-      "AmplifyAppId": "d2b6er059tjqgj"
+      "AmplifyAppId": "d2b6er059tjqgj",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-tomatoforum-dev-201448-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
         "tomatoforumf8cf84c7": {}
       },
       "function": {
-        "tomatoforumf8cf84c7DefineAuthChallenge": {},
-        "tomatoforumf8cf84c7CreateAuthChallenge": {},
+        "tomatoforumf8cf84c7DefineAuthChallenge": {
+          "deploymentBucketName": "amplify-tomatoforum-dev-201448-deployment",
+          "s3Key": "amplify-builds/tomatoforumf8cf84c7DefineAuthChallenge-43362f6f6357664c3568-build.zip"
+        },
+        "tomatoforumf8cf84c7CreateAuthChallenge": {
+          "deploymentBucketName": "amplify-tomatoforum-dev-201448-deployment",
+          "s3Key": "amplify-builds/tomatoforumf8cf84c7CreateAuthChallenge-576450614c5a7677316e-build.zip"
+        },
         "tomatoforumf8cf84c7VerifyAuthChallengeResponse": {
-          "RECAPTCHASECRET": ""
+          "RECAPTCHASECRET": "",
+          "deploymentBucketName": "amplify-tomatoforum-dev-201448-deployment",
+          "s3Key": "amplify-builds/tomatoforumf8cf84c7VerifyAuthChallengeResponse-486a756547364859746a-build.zip"
         }
+      },
+      "api": {
+        "tomatoforum": {}
       }
     }
   }

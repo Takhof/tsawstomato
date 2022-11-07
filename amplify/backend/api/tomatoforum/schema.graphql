@@ -4,26 +4,25 @@ type Post
     rules: [
       { allow: owner, operations: [create, update, delete, read] }
       { allow: private, operations: [read] }
-      { allow: public, operaions: [read] }
+      { allow: public, operations: [read] }
     ]
   ) {
   id: ID!
   title: String!
-  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+  comments: [Comment] @hasMany(fields: ["id"])
 }
 
 type Comment
   @model
-  @key(name: "byPost", fields: ["postID", "content"])
   @auth(
     rules: [
       { allow: owner, operations: [create, update, delete, read] }
       { allow: private, operations: [read] }
-      { allow: public, operaions: [read] }
+      { allow: public, operations: [read] }
     ]
   ) {
-  id: ID!
+  id: ID! @primaryKey(sortKeyFields: ["postID", "content"])
   postID: ID!
-  post: Post @connection(fields: ["postID"])
+  post: Post @hasOne(fields: ["postID"])
   content: String!
 }

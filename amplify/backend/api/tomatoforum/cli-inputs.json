@@ -8,6 +8,13 @@
       "cognitoUserPoolId": "authtomatoforumf8cf84c7"
     },
     "conflictResolution": {},
-    "additionalAuthTypes": []
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-11-07T12:41:03.442Z",
+        "keyDescription": "tomatoapi"
+      }
+    ]
   }
 }
