@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "captcha-define-challenge"
+  ],
+  "parentResource": "tomatoforumf8cf84c7",
+  "functionName": "tomatoforumf8cf84c7DefineAuthChallenge",
+  "resourceName": "tomatoforumf8cf84c7DefineAuthChallenge",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "C:\\snapshot\\repo\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\DefineAuthChallenge",
+  "triggerTemplate": "DefineAuthChallenge.json.ejs",
+  "triggerEventPath": "DefineAuthChallenge.event.json",
+  "roleName": "tomatoforumf8cf84c7DefineAuthChallenge",
+  "skipEdit": true,
+  "enableCors": false
+}

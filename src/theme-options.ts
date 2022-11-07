@@ -1,4 +1,12 @@
 import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
+import { Roboto } from "@next/font/google";
+
+export const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Helvetica", "Arial", "sans-serif"],
+});
 
 export const themeOptions: ThemeOptions = {
   palette: {
@@ -15,6 +23,10 @@ export const themeOptions: ThemeOptions = {
     },
     text: {
       primary: "#f3f3f3",
+      secondary: "rgba(255, 255, 255, 0.7)",
+    },
+    typography: {
+      fontFamily: roboto.style.fontFamily,
     },
   },
 };

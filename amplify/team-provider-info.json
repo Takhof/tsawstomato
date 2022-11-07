@@ -10,6 +10,18 @@
       "StackName": "amplify-tomatoforum-dev-201448",
       "StackId": "arn:aws:cloudformation:us-east-1:294953992273:stack/amplify-tomatoforum-dev-201448/693a9500-5e8d-11ed-90f8-0ee25b45eaa3",
       "AmplifyAppId": "d2b6er059tjqgj"
+    },
+    "categories": {
+      "auth": {
+        "tomatoforumf8cf84c7": {}
+      },
+      "function": {
+        "tomatoforumf8cf84c7DefineAuthChallenge": {},
+        "tomatoforumf8cf84c7CreateAuthChallenge": {},
+        "tomatoforumf8cf84c7VerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": ""
+        }
+      }
     }
   }
 }
