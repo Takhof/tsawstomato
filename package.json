@@ -17,9 +17,11 @@
     "@material-ui/icons": "^4.11.3",
     "@mui/material": "^5.10.12",
     "@next/font": "^13.0.2",
+    "aws-amplify": "^4.3.43",
     "next": "13.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.39.1"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
