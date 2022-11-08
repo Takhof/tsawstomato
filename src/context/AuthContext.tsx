@@ -1,9 +1,21 @@
 import Auth, { CognitoUser } from "@aws-amplify/auth";
 import { CheckCircleOutlineSharp } from "@material-ui/icons";
 import { Hub } from "aws-amplify";
-import { createContext, useEffect, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-const userContext = createContext<CognitoUser | null>(null);
+interface UserContextType {
+  user: CognitoUser | null;
+  setUser: Dispatch<SetStateAction<CognitoUser | null>>;
+}
+
+const UserContext = createContext<UserContextType>({} as UserContextType);
 
 interface Props {
   children: React.ReactElement;
@@ -35,8 +47,10 @@ export default function AuthContext({}: Props): ReactElement {
   }
 
   return (
-    <userContext.Provider value={(user, setUser)}>
+    <UserContext.Provider value={(user, setUser)}>
       {children}
-    </userContext.Provider>
+    </UserContext.Provider>
   );
 }
+
+export const useUser = (): UserContextType => useContext(UserContext);
