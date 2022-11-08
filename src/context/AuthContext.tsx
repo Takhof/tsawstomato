@@ -12,7 +12,7 @@ import {
 
 interface UserContextType {
   user: CognitoUser | null;
-  setUser: Dispatch<SetStateAction<CognitoUser | null>>;
+  setUser: Dispatch<SetStateAction<CognitoUser>>;
 }
 
 const UserContext = createContext<UserContextType>({} as UserContextType);
@@ -21,7 +21,7 @@ interface Props {
   children: React.ReactElement;
 }
 
-export default function AuthContext({}: Props): ReactElement {
+export default function AuthContext({ children }: Props): ReactElement {
   const [user, setUser] = useState<CognitoUser | null>(null);
 
   useEffect(() => {
@@ -29,10 +29,9 @@ export default function AuthContext({}: Props): ReactElement {
   }, []);
 
   useEffect(() => {
-    Hub.listen("auth"),
-      () => {
-        checkUser();
-      };
+    Hub.listen("auth", () => {
+      checkUser();
+    });
   }, []);
 
   async function checkUser() {

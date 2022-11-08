@@ -4,6 +4,7 @@ import { Auth } from "aws-amplify";
 import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import React, { useState } from "react";
+import { useUser } from "../context/AuthContext";
 
 interface IFormInput {
   username: string;
@@ -20,6 +21,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 });
 
 export default function Signup() {
+  const { user, setUser } = useUser();
   const [open, setOpen] = useState(false);
   const [signUpError, setSignUpError] = useState<string>("");
 
@@ -30,11 +32,9 @@ export default function Signup() {
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    console.log(data);
     try {
       signUpCustom(data);
     } catch (err) {
-      console.error(err);
       setSignUpError(err.message);
       setOpen(true);
     }
@@ -68,9 +68,11 @@ export default function Signup() {
       });
       console.log(user);
     } catch (error) {
-      console.log("error signing up:", error);
+      throw error;
     }
   }
+
+  console.log("user is", user);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -79,7 +81,7 @@ export default function Signup() {
         container
         direction="column"
         alignItems="center"
-        justify="center"
+        justifyContent="center"
         spacing={1}
       >
         <Grid item>

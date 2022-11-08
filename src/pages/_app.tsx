@@ -6,6 +6,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../theme";
 import createEmotionCache from "../createEmotionCache";
+import Amplify, { Auth } from "aws-amplify";
+import awsconfig from "../aws-exports";
+import AuthContext from "../context/AuthContext";
+Amplify.configure(awsconfig);
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -25,10 +29,12 @@ export default function MyApp(props: MyAppProps) {
           title="tomato"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <AuthContext>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </AuthContext>
     </CacheProvider>
   );
 }
