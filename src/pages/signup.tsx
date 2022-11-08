@@ -5,11 +5,13 @@ import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import React, { useState } from "react";
 import { useUser } from "../context/AuthContext";
+import { CognitoUser } from "@aws-amplify/auth";
 
 interface IFormInput {
   username: string;
   password: string;
   email: string;
+  code: string;
   iceCreamType: { label: string; value: string };
 }
 
@@ -24,6 +26,7 @@ export default function Signup() {
   const { user, setUser } = useUser();
   const [open, setOpen] = useState(false);
   const [signUpError, setSignUpError] = useState<string>("");
+  const [showCode, setShowCode] = useState<boolean>(false);
 
   const {
     register,
@@ -33,7 +36,12 @@ export default function Signup() {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
-      signUpCustom(data);
+      if (showCode) {
+        confirmSignUp(data);
+      } else {
+        await signUpCustom(data);
+        setShowCode(true);
+      }
     } catch (err) {
       setSignUpError(err.message);
       setOpen(true);
@@ -53,7 +61,18 @@ export default function Signup() {
     setOpen(false);
   };
 
-  async function signUpCustom(data: IFormInput) {
+  async function confirmSignUp(data: IFormInput) {
+    const { username, password, code } = data;
+    try {
+      await Auth.confirmSignUp(username, code);
+      const signedInUser = await Auth.signIn(username, password);
+      console.log("signed in!!", signedInUser);
+    } catch (error) {
+      console.log("error confirming sign up", error);
+    }
+  }
+
+  async function signUpCustom(data: IFormInput): Promise<CognitoUser> {
     const { username, password, email } = data;
     try {
       const { user } = await Auth.signUp({
@@ -67,6 +86,7 @@ export default function Signup() {
         },
       });
       console.log(user);
+      return user;
     } catch (error) {
       throw error;
     }
@@ -125,9 +145,25 @@ export default function Signup() {
             })}
           />
         </Grid>
-        <Grid style={{ marginTop: 16 }}>
+        {showCode && (
+          <Grid item>
+            <TextField
+              id="code"
+              label="verification code"
+              variant="outlined"
+              type="text"
+              error={errors.username ? true : false}
+              helperText={errors.username ? errors.username.message : null}
+              {...register("code", {
+                required: { value: true, message: "Please enter a code." },
+              })}
+            />
+          </Grid>
+        )}
+
+        <Grid item>
           <Button variant="contained" type="submit">
-            Sign up
+            {showCode ? "Confirm Code" : "Sign up"}
           </Button>
         </Grid>
       </Grid>
