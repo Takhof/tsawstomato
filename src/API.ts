@@ -97,29 +97,11 @@ export type CreateCommentInput = {
 };
 
 export type ModelCommentConditionInput = {
+  postID?: ModelIDInput | null,
+  content?: ModelStringInput | null,
   and?: Array< ModelCommentConditionInput | null > | null,
   or?: Array< ModelCommentConditionInput | null > | null,
   not?: ModelCommentConditionInput | null,
-};
-
-export type UpdateCommentInput = {
-  id: string,
-  postID: string,
-  content: string,
-};
-
-export type DeleteCommentInput = {
-  id: string,
-  postID: string,
-  content: string,
-};
-
-export type ModelPostFilterInput = {
-  id?: ModelIDInput | null,
-  title?: ModelStringInput | null,
-  and?: Array< ModelPostFilterInput | null > | null,
-  or?: Array< ModelPostFilterInput | null > | null,
-  not?: ModelPostFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -138,25 +120,28 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
+export type UpdateCommentInput = {
+  id: string,
+  postID?: string | null,
+  content?: string | null,
+};
+
+export type DeleteCommentInput = {
+  id: string,
+};
+
+export type ModelPostFilterInput = {
+  id?: ModelIDInput | null,
+  title?: ModelStringInput | null,
+  and?: Array< ModelPostFilterInput | null > | null,
+  or?: Array< ModelPostFilterInput | null > | null,
+  not?: ModelPostFilterInput | null,
+};
+
 export type ModelPostConnection = {
   __typename: "ModelPostConnection",
   items:  Array<Post | null >,
   nextToken?: string | null,
-};
-
-export type ModelCommentPrimaryCompositeKeyConditionInput = {
-  eq?: ModelCommentPrimaryCompositeKeyInput | null,
-  le?: ModelCommentPrimaryCompositeKeyInput | null,
-  lt?: ModelCommentPrimaryCompositeKeyInput | null,
-  ge?: ModelCommentPrimaryCompositeKeyInput | null,
-  gt?: ModelCommentPrimaryCompositeKeyInput | null,
-  between?: Array< ModelCommentPrimaryCompositeKeyInput | null > | null,
-  beginsWith?: ModelCommentPrimaryCompositeKeyInput | null,
-};
-
-export type ModelCommentPrimaryCompositeKeyInput = {
-  postID?: string | null,
-  content?: string | null,
 };
 
 export type ModelCommentFilterInput = {
@@ -167,12 +152,6 @@ export type ModelCommentFilterInput = {
   or?: Array< ModelCommentFilterInput | null > | null,
   not?: ModelCommentFilterInput | null,
 };
-
-export enum ModelSortDirection {
-  ASC = "ASC",
-  DESC = "DESC",
-}
-
 
 export type ModelSubscriptionPostFilterInput = {
   id?: ModelSubscriptionIDInput | null,
@@ -396,8 +375,6 @@ export type ListPostsQuery = {
 
 export type GetCommentQueryVariables = {
   id: string,
-  postID: string,
-  content: string,
 };
 
 export type GetCommentQuery = {
@@ -421,12 +398,9 @@ export type GetCommentQuery = {
 };
 
 export type ListCommentsQueryVariables = {
-  id?: string | null,
-  postIDContent?: ModelCommentPrimaryCompositeKeyConditionInput | null,
   filter?: ModelCommentFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
-  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListCommentsQuery = {
