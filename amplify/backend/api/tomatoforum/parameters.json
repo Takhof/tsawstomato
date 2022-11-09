@@ -1,12 +1,5 @@
 {
   "AppSyncApiName": "tomatoforum",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": [
-      "authtomatoforumf8cf84c7",
-      "Outputs.UserPoolId"
-    ]
-  },
-  "AuthModeLastUpdated": "2022-11-07T12:00:16.343Z"
+  "DynamoDBEnableServerSideEncryption": false
 }

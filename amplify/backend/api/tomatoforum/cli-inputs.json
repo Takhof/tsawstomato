@@ -4,17 +4,8 @@
     "apiName": "tomatoforum",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authtomatoforumf8cf84c7"
-    },
-    "conflictResolution": {},
-    "additionalAuthTypes": [
-      {
-        "mode": "API_KEY",
-        "expirationTime": 365,
-        "apiKeyExpirationDate": "2023-11-07T12:41:03.442Z",
-        "keyDescription": "tomatoapi"
-      }
-    ]
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
   }
 }

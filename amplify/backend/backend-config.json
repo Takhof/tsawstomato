@@ -3,92 +3,28 @@
     "tomatoforum": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "tomatoforumf8cf84c7",
-          "attributes": [
-            "UserPoolId"
-          ]
-        }
-      ],
+      "dependsOn": [],
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authtomatoforumf8cf84c7"
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
             }
           },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "API_KEY",
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 365,
-                "apiKeyExpirationDate": "2023-11-07T12:41:03.442Z",
-                "description": "tomatoapi"
-              }
-            }
-          ]
+          "additionalAuthenticationProviders": []
         }
       }
     }
   },
-  "function": {
-    "tomatoforumf8cf84c7DefineAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "tomatoforumf8cf84c7CreateAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "tomatoforumf8cf84c7VerifyAuthChallengeResponse": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
   "auth": {
-    "tomatoforumf8cf84c7": {
+    "tomatoforumd1c58b9c": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "tomatoforumf8cf84c7DefineAuthChallenge",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "tomatoforumf8cf84c7CreateAuthChallenge",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "tomatoforumf8cf84c7VerifyAuthChallengeResponse",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
-        }
-      ],
-      "customAuth": true,
+      "dependsOn": [],
+      "customAuth": false,
       "frontendAuthConfig": {
-        "socialProviders": [
-          "GOOGLE"
-        ],
+        "socialProviders": [],
         "usernameAttributes": [],
         "signupAttributes": [
           "EMAIL"
