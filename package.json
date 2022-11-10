@@ -15,13 +15,16 @@
     "@emotion/styled": "^11.10.5",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
     "@next/font": "^13.0.2",
     "aws-amplify": "^4.3.43",
+    "moment": "^2.29.4",
     "next": "13.0.2",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.39.1"
+    "react-hook-form": "^7.39.1",
+    "react-moment": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "18.11.9",

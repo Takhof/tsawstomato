@@ -16,5 +16,6 @@ export const themeOptions: ThemeOptions = {
   },
   typography: {
     fontFamily: "Roboto",
+    body: "Roboto",
   },
 };
