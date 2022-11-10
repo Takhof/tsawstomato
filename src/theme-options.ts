@@ -14,4 +14,7 @@ export const themeOptions: ThemeOptions = {
       paper: "#fff",
     },
   },
+  typography: {
+    fontFamily: "Roboto",
+  },
 };
