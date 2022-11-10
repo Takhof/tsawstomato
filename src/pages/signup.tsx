@@ -44,7 +44,7 @@ export default function Signup() {
         await signUpCustom(data);
         setShowCode(true);
       }
-    } catch (err) {
+    } catch (err: any) {
       setSignUpError(err.message);
       setOpen(true);
     }
