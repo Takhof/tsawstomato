@@ -28,7 +28,7 @@ type Comment
     ]
   ) {
   id: ID!
-  postID: ID! @index(name: "byPost", sortKeyFields: ["content"])
-  post: Post @hasOne(fields: ["postID"])
+  postID: ID! @index(name: "byPost")
+  post: Post @belongsTo(fields: ["postID"])
   content: String!
 }

@@ -37,11 +37,3 @@ export default function Home() {
     </Container>
   );
 }
-
-//get all the posts on server side
-//since all users can read posts in our schema logic
-//we can use the api key authorization method
-
-//so we'll call code to access our graphql api on the serverside
-//pass it to our function as props
-//render the posts on the home page
