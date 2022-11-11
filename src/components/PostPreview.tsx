@@ -6,7 +6,7 @@ import {
   Paper,
   Typography,
 } from "@material-ui/core";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { Post } from "../API";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -14,6 +14,7 @@ import React from "react";
 import Moment from "react-moment";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { Storage } from "aws-amplify";
 
 interface Props {
   post: Post;
@@ -21,7 +22,20 @@ interface Props {
 
 export default function PostPreview({ post }: Props): ReactElement {
   const router = useRouter();
+  const [postImage, setPostImage] = useState<string | undefined>(undefined);
+  useEffect(() => {
+    async function getImageFromStorage() {
+      try {
+        const signedURL = await Storage.get(post.image);
+        console.log("Found Image:", signedURL);
+        setPostImage(signedURL);
+      } catch (error) {
+        console.log("No image found.");
+      }
+    }
 
+    getImageFromStorage();
+  }, []);
   return (
     <Paper elevation={3}>
       <Grid
@@ -69,17 +83,17 @@ export default function PostPreview({ post }: Props): ReactElement {
               <Grid item style={{ maxHeight: 32, overflowY: "hidden" }}>
                 {post.contents}
               </Grid>
-              {/* {post.image && ( */}
-              <Grid item>
-                <Image
-                  alt="prevImage"
-                  src={"/butterfly.png"}
-                  height={500}
-                  width={900}
-                  layout="responsive"
-                ></Image>
-              </Grid>
-              {/* )} */}
+              {post.image && (
+                <Grid item>
+                  <Image
+                    alt="prevImage"
+                    src={postImage}
+                    height={500}
+                    width={900}
+                    layout="responsive"
+                  ></Image>
+                </Grid>
+              )}
             </Grid>
           </Grid>
         </ButtonBase>

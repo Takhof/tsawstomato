@@ -1,0 +1,16 @@
+{
+  "resourceName": "tomatostorage",
+  "policyUUID": "d82bf3fd",
+  "bucketName": "forumtomatoff2ae53c763b45dbbca87e217e7517e4",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

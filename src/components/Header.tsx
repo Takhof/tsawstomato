@@ -87,7 +87,7 @@ export default function Header() {
                   aria-label="create"
                   color="inherit"
                 >
-                  <AddIcon></AddIcon>
+                  <AddIcon />
                 </IconButton>
               </Tooltip>
               <IconButton

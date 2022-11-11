@@ -27,8 +27,8 @@ export default function Home() {
     fetchPosts();
   }, []);
 
-  console.log("USER:", user);
-  console.log("POSTS", posts);
+  // console.log("USER:", user);
+  // console.log("POSTS", posts);
   return (
     <Container maxWidth="md">
       {posts.map((post) => {
