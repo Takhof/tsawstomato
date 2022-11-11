@@ -1,7 +1,7 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "tomatoforum",
+    "apiName": "forumtomato",
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
@@ -10,7 +10,7 @@
     "additionalAuthTypes": [
       {
         "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authtomatoforumd1c58b9c"
+        "cognitoUserPoolId": "authforumtomatoecfdb5f9"
       }
     ]
   }

@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "tomatoforumd1c58b9c_identitypool_d1c58b9c",
+    "identityPoolName": "forumtomatoecfdb5f9_identitypool_ecfdb5f9",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "tomatod1c58b9c",
-    "userPoolName": "tomatoforumd1c58b9c_userpool_d1c58b9c",
+    "resourceNameTruncated": "forumtecfdb5f9",
+    "userPoolName": "forumtomatoecfdb5f9_userpool_ecfdb5f9",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,13 +31,12 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "tomatod1c58b9c_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "forumtecfdb5f9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "d1c58b9c",
-    "resourceName": "tomatoforumd1c58b9c",
+    "sharedId": "ecfdb5f9",
+    "resourceName": "forumtomatoecfdb5f9",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
-    "triggers": {},
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

@@ -1,10 +1,10 @@
 {
-  "AppSyncApiName": "tomatoforum",
+  "AppSyncApiName": "forumtomato",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
-      "authtomatoforumd1c58b9c",
+      "authforumtomatoecfdb5f9",
       "Outputs.UserPoolId"
     ]
   }

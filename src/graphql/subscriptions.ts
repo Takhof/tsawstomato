@@ -73,17 +73,6 @@ export const onCreateComment = /* GraphQL */ `
     onCreateComment(filter: $filter, owner: $owner) {
       id
       postID
-      post {
-        id
-        title
-        contents
-        image
-        upvotes
-        downvotes
-        createdAt
-        updatedAt
-        owner
-      }
       content
       createdAt
       updatedAt
@@ -99,17 +88,6 @@ export const onUpdateComment = /* GraphQL */ `
     onUpdateComment(filter: $filter, owner: $owner) {
       id
       postID
-      post {
-        id
-        title
-        contents
-        image
-        upvotes
-        downvotes
-        createdAt
-        updatedAt
-        owner
-      }
       content
       createdAt
       updatedAt
@@ -125,17 +103,6 @@ export const onDeleteComment = /* GraphQL */ `
     onDeleteComment(filter: $filter, owner: $owner) {
       id
       postID
-      post {
-        id
-        title
-        contents
-        image
-        upvotes
-        downvotes
-        createdAt
-        updatedAt
-        owner
-      }
       content
       createdAt
       updatedAt

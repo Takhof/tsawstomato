@@ -1,12 +1,12 @@
 {
   "api": {
-    "tomatoforum": {
+    "forumtomato": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "auth",
-          "resourceName": "tomatoforumd1c58b9c",
+          "resourceName": "forumtomatoecfdb5f9",
           "attributes": [
             "UserPoolId"
           ]
@@ -24,7 +24,7 @@
             {
               "authenticationType": "AMAZON_COGNITO_USER_POOLS",
               "userPoolConfig": {
-                "userPoolId": "authtomatoforumd1c58b9c"
+                "userPoolId": "authforumtomatoecfdb5f9"
               }
             }
           ]
@@ -33,7 +33,7 @@
     }
   },
   "auth": {
-    "tomatoforumd1c58b9c": {
+    "forumtomatoecfdb5f9": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

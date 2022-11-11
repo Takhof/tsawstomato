@@ -1,22 +1,22 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-tomatoforum-dev-210333-authRole",
-      "UnauthRoleArn": "arn:aws:iam::294953992273:role/amplify-tomatoforum-dev-210333-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::294953992273:role/amplify-tomatoforum-dev-210333-authRole",
+      "AuthRoleName": "amplify-forumtomato-dev-184049-authRole",
+      "UnauthRoleArn": "arn:aws:iam::294953992273:role/amplify-forumtomato-dev-184049-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::294953992273:role/amplify-forumtomato-dev-184049-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-tomatoforum-dev-210333-deployment",
-      "UnauthRoleName": "amplify-tomatoforum-dev-210333-unauthRole",
-      "StackName": "amplify-tomatoforum-dev-210333",
-      "StackId": "arn:aws:cloudformation:us-east-1:294953992273:stack/amplify-tomatoforum-dev-210333/8df57190-6026-11ed-a526-12e46e4f62fb",
-      "AmplifyAppId": "d1bav27be5ydkw"
+      "DeploymentBucketName": "amplify-forumtomato-dev-184049-deployment",
+      "UnauthRoleName": "amplify-forumtomato-dev-184049-unauthRole",
+      "StackName": "amplify-forumtomato-dev-184049",
+      "StackId": "arn:aws:cloudformation:us-east-1:294953992273:stack/amplify-forumtomato-dev-184049/f1f1f450-61a4-11ed-a70f-125eece4d3cf",
+      "AmplifyAppId": "d3eyf0uyta80x3"
     },
     "categories": {
       "auth": {
-        "tomatoforumd1c58b9c": {}
+        "forumtomatoecfdb5f9": {}
       },
       "api": {
-        "tomatoforum": {}
+        "forumtomato": {}
       }
     }
   }

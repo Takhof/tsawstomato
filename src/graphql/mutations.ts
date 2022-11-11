@@ -73,17 +73,6 @@ export const createComment = /* GraphQL */ `
     createComment(input: $input, condition: $condition) {
       id
       postID
-      post {
-        id
-        title
-        contents
-        image
-        upvotes
-        downvotes
-        createdAt
-        updatedAt
-        owner
-      }
       content
       createdAt
       updatedAt
@@ -99,17 +88,6 @@ export const updateComment = /* GraphQL */ `
     updateComment(input: $input, condition: $condition) {
       id
       postID
-      post {
-        id
-        title
-        contents
-        image
-        upvotes
-        downvotes
-        createdAt
-        updatedAt
-        owner
-      }
       content
       createdAt
       updatedAt
@@ -125,17 +103,6 @@ export const deleteComment = /* GraphQL */ `
     deleteComment(input: $input, condition: $condition) {
       id
       postID
-      post {
-        id
-        title
-        contents
-        image
-        upvotes
-        downvotes
-        createdAt
-        updatedAt
-        owner
-      }
       content
       createdAt
       updatedAt

@@ -53,7 +53,7 @@
       "comprehend": 1
     },
     "project": {
-      "overrides": true
+      "overrides": false
     }
   },
   "debug": {
