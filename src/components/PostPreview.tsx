@@ -26,7 +26,7 @@ export default function PostPreview({ post }: Props): ReactElement {
   useEffect(() => {
     async function getImageFromStorage() {
       try {
-        const signedURL = await Storage.get(post.image);
+        const signedURL = await Storage.get(post.image!);
         console.log("Found Image:", signedURL);
         setPostImage(signedURL);
       } catch (error) {
