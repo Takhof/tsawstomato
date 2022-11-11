@@ -54,8 +54,6 @@ export default function Signup() {
     setOpen(false);
   };
 
-  console.log("user is", user);
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <p></p>

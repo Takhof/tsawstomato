@@ -9,6 +9,7 @@ import createEmotionCache from "../createEmotionCache";
 import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "../aws-exports";
 import AuthContext from "../context/AuthContext";
+import Header from "../components/Header";
 Amplify.configure({ ...awsconfig, ssr: true });
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -32,6 +33,7 @@ export default function MyApp(props: MyAppProps) {
       <AuthContext>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <Header />
           <Component {...pageProps} />
         </ThemeProvider>
       </AuthContext>
