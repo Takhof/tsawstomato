@@ -12,13 +12,13 @@ interface Props {
 }
 
 export default function Posts({ post }: Props): ReactElement {
-  const [comments, setComments] = useState<Comment[]>(post.comments?.items);
+  const [comments, setComments] = useState(post.comments!.items);
   return (
     <Container maxWidth="md">
       <>
         <PostPreview post={post}></PostPreview>
-        {post.comments.items.map((comment) => (
-          <PostComments key={comment.postID} comment={comment} />
+        {post.comments!.items.map((comment) => (
+          <PostComments key={comment!.postID} comment={comment!} />
         ))}
       </>
     </Container>
@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: any = async () => {
   const response = (await API.graphql({ query: listPosts })) as {
     data: ListPostsQuery;
     errors: any[];

@@ -19,10 +19,7 @@ interface IFormInput {
   content: string;
 }
 
-interface Props {
-  file: File;
-  setFile: React.Dispatch<React.SetStateAction<File>>;
-}
+interface Props {}
 
 export default function Create({}: Props): ReactElement {
   const [file, setFile] = useState<File>();

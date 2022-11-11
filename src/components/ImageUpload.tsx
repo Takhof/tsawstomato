@@ -12,7 +12,7 @@ import {
 
 interface Props {
   file: File;
-  setFile: React.Dispatch<React.SetStateAction<File>>;
+  setFile: React.Dispatch<React.SetStateAction<File | undefined>>;
 }
 
 export default function ImageUpload({ file, setFile }: Props) {
@@ -21,7 +21,7 @@ export default function ImageUpload({ file, setFile }: Props) {
     accept: {
       "image/*": [],
     },
-    onDrop: (acceptedFiles) => {
+    onDrop: (acceptedFiles: any) => {
       setFile(acceptedFiles[0]);
     },
   });

@@ -87,7 +87,7 @@ export default function PostPreview({ post }: Props): ReactElement {
                 <Grid item>
                   <Image
                     alt="prevImage"
-                    src={postImage}
+                    src={postImage!}
                     height={500}
                     width={900}
                     layout="responsive"
